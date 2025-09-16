@@ -1,31 +1,69 @@
 {
   "name": "@hyunsdev/ui",
+  "private": false,
   "version": "0.1.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "style": "dist/style.css",
   "exports": {
     ".": {
       "import": "./dist/index.mjs",
       "require": "./dist/index.js",
       "types": "./dist/index.d.ts"
-    }
+    },
+    "./style.css": "./dist/style.css"
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts",
-    "dev": "tsup src/index.ts --watch --format cjs,esm --dts"
+    "v-dev": "vite",
+    "v-build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "build:ts": "tsup src/index.ts --format cjs,esm --dts",
+    "build:css": "tailwindcss -i ./src/style.css -o ./dist/style.css --minify",
+    "build": "pnpm run build:ts && pnpm run build:css",
+    "dev:ts": "tsup src/index.ts --watch --format cjs,esm --dts",
+    "dev:css": "tailwindcss -i ./src/style.css -o ./dist/style.css --watch",
+    "dev": "concurrently \"pnpm run dev:ts\" \"pnpm run dev:css\""
   },
   "devDependencies": {
+    "@eslint/js": "^9.33.0",
+    "@tailwindcss/cli": "^4.1.13",
+    "@tailwindcss/postcss": "^4.1.13",
+    "@tailwindcss/vite": "^4.1.13",
     "@types/react": "^18.3.24",
     "@types/react-dom": "^18.3.7",
-    "tsup": "^8.0.0",
-    "typescript": "^5.0.0"
+    "@vitejs/plugin-react": "^5.0.0",
+    "autoprefixer": "^10.4.21",
+    "concurrently": "^9.2.1",
+    "eslint": "^9.33.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "postcss": "^8.5.6",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^4.1.13",
+    "tsup": "^8.5.0",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.39.1",
+    "vite": "^7.1.5"
+  },
+  "pearDependencies": {
+    "@tailwindcss/vite": "^4.1.13",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^4.1.13"
   },
   "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "@radix-ui/react-slot": "^1.2.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.544.0",
+    "tailwind-merge": "^3.3.1",
+    "tw-animate-css": "^1.3.8"
   }
 }

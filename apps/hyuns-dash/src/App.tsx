@@ -1,9 +1,10 @@
 import { Button } from "@hyunsdev/ui";
+import "./index.css";
 
 function App() {
   return (
     <>
-      <Button label="Hello Button" />
+      <Button>123</Button>
     </>
   );
 }
