@@ -27,10 +27,18 @@
     "build": "pnpm run build:ts && pnpm run build:css",
     "dev:ts": "tsup src/index.ts --watch --format cjs,esm --dts",
     "dev:css": "tailwindcss -i ./src/style.css -o ./dist/style.css --watch",
-    "dev": "concurrently \"pnpm run dev:ts\" \"pnpm run dev:css\""
+    "dev": "concurrently \"pnpm run dev:ts\" \"pnpm run dev:css\"",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^4.1.1",
     "@eslint/js": "^9.33.0",
+    "@storybook/addon-a11y": "^9.1.6",
+    "@storybook/addon-docs": "^9.1.6",
+    "@storybook/addon-onboarding": "^9.1.6",
+    "@storybook/addon-vitest": "^9.1.6",
+    "@storybook/react-vite": "^9.1.6",
     "@tailwindcss/cli": "^4.1.13",
     "@tailwindcss/postcss": "^4.1.13",
     "@tailwindcss/vite": "^4.1.13",
@@ -42,15 +50,21 @@
     "eslint": "^9.33.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
+    "eslint-plugin-storybook": "^9.1.6",
     "globals": "^16.3.0",
     "postcss": "^8.5.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "storybook": "^9.1.6",
     "tailwindcss": "^4.1.13",
     "tsup": "^8.5.0",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.39.1",
-    "vite": "^7.1.5"
+    "vite": "^7.1.5",
+    "vitest": "^3.2.4",
+    "@vitest/browser": "^3.2.4",
+    "playwright": "^1.55.0",
+    "@vitest/coverage-v8": "^3.2.4"
   },
   "pearDependencies": {
     "@tailwindcss/vite": "^4.1.13",
