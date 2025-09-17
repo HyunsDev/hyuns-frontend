@@ -11,6 +11,8 @@
     "ui-dev": "pnpm --filter @hyunsdev/ui dev",
     "ui-build": "pnpm --filter @hyunsdev/ui build",
     "dash-dev": "pnpm --filter hyuns-dash dev",
-    "dash-build": "pnpm --filter hyuns-dash build"
+    "dash-build": "pnpm --filter hyuns-dash build",
+    "pkm-utils-dev": "pnpm --filter hyuns-pkm-utils dev",
+    "pkm-utils-build": "pnpm --filter hyuns-pkm-utils build"
   }
 }
