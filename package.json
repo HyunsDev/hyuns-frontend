@@ -7,6 +7,9 @@
   "author": "혀느현스",
   "license": "ISC",
   "scripts": {
+    "storybook-dev": "pnpm --filter @hyunsdev/ui storybook",
+    "ui-dev": "pnpm --filter @hyunsdev/ui dev",
+    "ui-build": "pnpm --filter @hyunsdev/ui build",
     "dash-dev": "pnpm --filter hyuns-dash dev",
     "dash-build": "pnpm --filter hyuns-dash build"
   }
