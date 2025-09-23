@@ -1,6 +1,7 @@
 "use client";
 
 import { MainSidebar } from "@/containers/MainSidebar/MainSidebar";
+import { Badge } from "@workspace/ui/components/badge";
 import { Button } from "@workspace/ui/components/button";
 import {
   Card,
@@ -16,7 +17,6 @@ import {
   PenSquare,
   ImageIcon,
   Rows,
-  Badge,
   Sparkles,
   ArrowRight,
 } from "lucide-react";
