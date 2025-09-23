@@ -1,18 +1,20 @@
 {
   "name": "hyuns-frontends",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "keywords": [],
-  "author": "혀느현스",
-  "license": "ISC",
+  "private": true,
   "scripts": {
-    "storybook-dev": "pnpm --filter @hyunsdev/ui storybook",
-    "ui-dev": "pnpm --filter @hyunsdev/ui dev",
-    "ui-build": "pnpm --filter @hyunsdev/ui build",
-    "dash-dev": "pnpm --filter hyuns-dash dev",
-    "dash-build": "pnpm --filter hyuns-dash build",
-    "pkm-utils-dev": "pnpm --filter hyuns-pkm-utils dev",
-    "pkm-utils-build": "pnpm --filter hyuns-pkm-utils build"
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "check-types": "turbo run check-types"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "turbo": "^2.5.6",
+    "typescript": "5.9.2"
+  },
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=18"
   }
 }
