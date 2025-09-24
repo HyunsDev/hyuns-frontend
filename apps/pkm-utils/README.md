@@ -1,6 +1,6 @@
 
 <p align="center">
-    <img src = "./public/favicon.png" height = "96px" alt = "Hyuns PKM Utils 아이콘"/>
+    <img src = "./app/favicon.png" height = "96px" alt = "Hyuns PKM Utils 아이콘"/>
 </p>
 <h1 align="center">hyuns-pkm-utils-web</h1>
 
@@ -33,38 +33,9 @@ pnpm install
 ```bash
 pnpm dev
 ```
-- 기본 접속 주소: `http://localhost:5173`
+- 기본 접속 주소: `http://localhost:3000`
 
 ### 프로덕션 빌드
 ```bash
 pnpm build
 ```
-- 출력물은 `build/client`(정적 파일)과 `build/server`(SSR 번들)로 생성됩니다.
-
-### 타입 검사
-```bash
-pnpm typecheck
-```
-
-## 프로젝트 구조 (요약)
-```text
-app/
-├─ routes/
-│  ├─ home.tsx              # 도구 허브 및 소개 화면
-│  ├─ svg-icon/page.tsx     # SVG 아이콘 생성
-│  ├─ image-icon/page.tsx   # 이미지 아이콘 생성
-│  └─ line/page.tsx         # 라인 배너 생성
-├─ components/ui            # 공통 UI 컴포넌트 (Radix 기반)
-├─ containers               # 레이아웃 및 사이드바 컨테이너
-├─ data                     # 색상 프리셋 등 정적 데이터
-├─ hooks, lib               # 유틸리티 훅과 헬퍼
-└─ provider.tsx             # 전역 상태 및 토스트 Provider
-```
-
-## 배포 메모
-- `pnpm build` 결과를 Node 환경에서 `pnpm start`(= `react-router-serve`)로 제공하거나, 원하는 호스팅에서 정적/서버 번들을 활용할 수 있습니다.
-- Dockerfile이 포함되어 있어 `docker build -t hyuns-pkm-utils-web .` 형태로 이미지 빌드가 가능합니다.
-
-## 기여 및 문의
-- 이 저장소는 개인 실험 프로젝트입니다. 개선 아이디어나 버그 제보는 Issue 또는 Pull Request로 남겨주세요.
-- 제작자: [HyunsDev](https://hyuns.dev)
