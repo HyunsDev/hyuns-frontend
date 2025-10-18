@@ -1,4 +1,4 @@
-import { NotepadText, ScrollText } from "lucide-react";
+import { LayoutDashboard, NotepadText, ScrollText } from "lucide-react";
 import { ReactNode } from "react";
 
 export type View = {
@@ -18,14 +18,14 @@ export const views: View[] = [
   {
     id: "dashboard",
     title: "Dashboard",
-    href: "/",
-    icon: <></>,
-    isVisibleInViewList: false,
+    href: "/dashboard",
+    icon: <LayoutDashboard />,
+    isVisibleInViewList: true,
   },
   {
     id: "journal",
     title: "Journal",
-    href: "/journals",
+    href: "/journal",
     icon: <ScrollText />,
     isVisibleInViewList: true,
   },

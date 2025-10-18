@@ -1,3 +1,6 @@
+"use client";
+
+import { Slot } from "@radix-ui/react-slot";
 import {
   Sidebar,
   SidebarMenuItem,
@@ -27,7 +30,7 @@ export function WorkbenchActivityBar({
 }
 
 const sidebarMenuButtonVariants = cva(
-  "peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md text-left text-sm opacity-30 outline-hidden ring-sidebar-ring transition-[width,height,padding,opacity] hover:text-sidebar-accent-foreground focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:opacity-100 data-[active=true]:font-medium data-[active=true]:text-sidebar-foreground data-[state=open]:hover:opacity-70 data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! [&>span:last-child]:truncate [&>svg]:size-6 [&>svg]:shrink-0 [&>svg]:stroke-[1.2px]",
+  "peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md text-left text-sm opacity-40 outline-hidden ring-sidebar-ring transition-[width,height,padding,opacity] hover:text-sidebar-accent-foreground focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:opacity-100 data-[active=true]:font-medium data-[active=true]:text-sidebar-foreground data-[state=open]:hover:opacity-70 data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8!  [&>span:last-child]:truncate [&>svg]:size-6 [&>svg]:shrink-0 [&>svg]:stroke-[1.5px]",
   {
     variants: {
       variant: {
@@ -61,7 +64,7 @@ function SidebarMenuButton({
   isActive?: boolean;
   tooltip?: string | React.ComponentProps<typeof TooltipContent>;
 } & VariantProps<typeof sidebarMenuButtonVariants>) {
-  const Comp = "button";
+  const Comp = asChild ? Slot : "button";
   const { isMobile, state } = useSidebar();
 
   const button = (
@@ -98,19 +101,22 @@ function SidebarMenuButton({
   );
 }
 
-export type WorkbenchActivityBarMenuItemProps = {
-  title: string;
-  icon: React.ReactNode;
-  isActive: boolean;
-  onClick: () => void;
-  hasNotification?: boolean;
-};
+export type WorkbenchActivityBarMenuItemProps =
+  React.ComponentProps<"button"> & {
+    title: string;
+    icon: React.ReactNode;
+    isActive: boolean;
+    hasNotification?: boolean;
+    asChild?: boolean;
+  };
 export function WorkbenchActivityBarMenuItem({
   title,
   icon,
   isActive,
-  onClick,
   hasNotification = false,
+  className,
+  asChild = false,
+  ...props
 }: WorkbenchActivityBarMenuItemProps) {
   return (
     <SidebarMenuItem key={title}>
@@ -120,8 +126,11 @@ export function WorkbenchActivityBarMenuItem({
           hidden: false,
         }}
         isActive={isActive}
-        onClick={onClick}
-        className="group/menu-button relative overflow-visible px-1"
+        className={cn(
+          "group/menu-button relative overflow-visible px-1",
+          className
+        )}
+        {...props}
       >
         <span
           aria-hidden

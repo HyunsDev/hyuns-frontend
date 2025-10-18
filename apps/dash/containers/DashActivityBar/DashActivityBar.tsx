@@ -18,6 +18,13 @@ import {
 } from "@workspace/ui/layouts/workbench";
 import { NavUser } from "./NavUser";
 import { Separator } from "@workspace/ui/components/separator";
+import Link from "next/link";
+
+const ViewNotice: { [key: string]: boolean } = {
+  dashboard: false,
+  journal: true,
+  memo: true,
+};
 
 export function DashActivityBar() {
   const { currentView, setCurrentView, views } = useView();
@@ -28,7 +35,7 @@ export function DashActivityBar() {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild className="md:h-8 md:p-0">
-              <a href="/">
+              <Link href="/">
                 <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
                   <DashIcon className="size-6" />
                 </div>
@@ -36,16 +43,15 @@ export function DashActivityBar() {
                   <span className="truncate font-medium">Acme Inc</span>
                   <span className="truncate text-xs">Enterprise</span>
                 </div>
-              </a>
+              </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
-      <Separator />
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupContent className="px-1.5 md:px-0">
-            <SidebarMenu>
+          <SidebarGroupContent className="px-0">
+            <SidebarMenu className="gap-1.5">
               {views
                 .filter((view) => view.isVisibleInViewList)
                 .map((view) => (
@@ -55,7 +61,7 @@ export function DashActivityBar() {
                     icon={view.icon}
                     isActive={currentView?.id === view.id}
                     onClick={() => setCurrentView(view.id)}
-                    hasNotification={true}
+                    hasNotification={ViewNotice[view.id]}
                   />
                 ))}
             </SidebarMenu>

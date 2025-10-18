@@ -16,13 +16,9 @@ import {
 } from "react";
 
 export type ViewContextValue = {
-  /** Currently resolved view, or null if the pathname does not map to any view. */
   currentView: View | null;
-  /** Navigate to the provided view id and keep URL in sync. */
   setCurrentView: (viewId: string) => void;
-  /** All available views registered for Dash. */
   views: View[];
-  /** Utility helper to check whether a pathname belongs to a registered view. */
   isKnownPath: (pathname: string | null | undefined) => boolean;
 };
 
