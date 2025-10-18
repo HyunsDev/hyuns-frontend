@@ -9,10 +9,7 @@ import {
 import { DayButton, DayPicker, getDefaultClassNames } from "react-day-picker";
 
 import { cn } from "@workspace/ui/lib/utils";
-import {
-  Button,
-  buttonVariants,
-} from "@workspace/ui/components/button/button.js";
+import { Button, buttonVariants } from "@workspace/ui/components/button/button";
 
 function Calendar({
   className,
@@ -93,7 +90,7 @@ function Calendar({
           "text-muted-foreground rounded-md flex-1 font-normal text-[0.8rem] select-none",
           defaultClassNames.weekday
         ),
-        week: cn("flex w-full mt-2", defaultClassNames.week),
+        week: cn("flex w-full mt-1", defaultClassNames.week),
         week_number_header: cn(
           "select-none w-(--cell-size)",
           defaultClassNames.week_number_header

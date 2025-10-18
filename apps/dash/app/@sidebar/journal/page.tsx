@@ -1,3 +1,5 @@
+import { Calendar } from "@workspace/ui/components/calendar";
+import { Separator } from "@workspace/ui/components/separator";
 import {
   SidebarHeader,
   SidebarTrigger,
@@ -19,6 +21,14 @@ export default function Page() {
     <WorkbenchSidebar>
       <WorkbenchSidebarHeader title="Dashboard" />
       <SidebarContent>
+        <div className="">
+          <Calendar
+            mode="single"
+            className="rounded-md w-full bg-workbench-background"
+            captionLayout="dropdown"
+          />
+          <Separator />
+        </div>
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu>
