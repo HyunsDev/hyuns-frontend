@@ -30,7 +30,7 @@ export function WorkbenchActivityBar({
 }
 
 const sidebarMenuButtonVariants = cva(
-  "peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md text-left text-sm opacity-40 outline-hidden ring-sidebar-ring transition-[width,height,padding,opacity] hover:text-sidebar-accent-foreground focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:opacity-100 data-[active=true]:font-medium data-[active=true]:text-sidebar-foreground data-[state=open]:hover:opacity-70 data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8!  [&>span:last-child]:truncate [&>svg]:size-6 [&>svg]:shrink-0 [&>svg]:stroke-[1.5px]",
+  "peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md text-left text-sm opacity-30 outline-hidden ring-sidebar-ring transition-[width,height,padding,opacity] hover:text-sidebar-accent-foreground focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-20 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:opacity-100 data-[active=true]:font-medium data-[active=true]:text-sidebar-primary data-[state=open]:hover:opacity-70 data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8!  [&>span:last-child]:truncate [&>svg]:size-6 [&>svg]:shrink-0 [&>svg]:stroke-[1.5px]",
   {
     variants: {
       variant: {
@@ -135,12 +135,12 @@ export function WorkbenchActivityBarMenuItem({
         <span
           aria-hidden
           className={cn(
-            "pointer-events-none absolute -left-2 w-1 rounded-r bg-sidebar-foreground transition-[height,opacity,transform] duration-200 ease-in-out",
+            "pointer-events-none absolute -left-2 rounded-r bg-sidebar-primary transition-[width,height,opacity,transform] duration-200 ease-in-out",
             isActive
-              ? "top-0.5 bottom-0.5 opacity-100"
+              ? "top-1/2 h-8 w-1 -translate-y-1/2 opacity-100"
               : hasNotification
-                ? "top-1/2 h-2 -translate-y-1/2 opacity-100 group-hover/menu-button:h-5 group-hover/menu-button:opacity-100"
-                : "top-1/2 h-2 -translate-y-1/2 opacity-0 group-hover/menu-button:h-5 group-hover/menu-button:opacity-100"
+                ? "top-1/2 h-2 w-1 -translate-y-1/2 opacity-100 group-hover/menu-button:h-5 group-hover/menu-button:w-1 group-hover/menu-button:opacity-100"
+                : "top-1/2 h-4 w-0 -translate-y-1/2 opacity-0 group-hover/menu-button:h-5 group-hover/menu-button:w-1 group-hover/menu-button:opacity-100"
           )}
         />
         {icon}
