@@ -165,7 +165,7 @@ function WorkbenchSidebarResizeHandle() {
     >
       <span
         className={cn(
-          "h-1/3 w-1 rounded bg-sidebar-foreground opacity-30 transition-[opacity] duration-150 ease-in-out",
+          "h-[64px] w-1 rounded bg-sidebar-foreground opacity-30 transition-[opacity] duration-150 ease-in-out",
           isDragging && "opacity-70"
         )}
       />

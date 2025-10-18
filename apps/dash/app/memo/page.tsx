@@ -8,13 +8,14 @@ import {
 } from "@workspace/ui/components/breadcrumb";
 import {
   WorkbenchPanelContent,
+  WorkbenchPanelGroup,
   WorkbenchPanelHeader,
 } from "@workspace/ui/layouts/workbench/components/Panel";
 import { WorkbenchPanel } from "@workspace/ui/layouts/workbench/components/Panel/WorkbenchPanel";
 
 export default function Page() {
   return (
-    <>
+    <WorkbenchPanelGroup>
       <WorkbenchPanel>
         <WorkbenchPanelHeader>
           <Breadcrumb>
@@ -65,6 +66,6 @@ export default function Page() {
           </div>
         </WorkbenchPanelContent>
       </WorkbenchPanel>
-    </>
+    </WorkbenchPanelGroup>
   );
 }

@@ -12,7 +12,7 @@ export function WorkbenchPanel({
   return (
     <div
       className={cn(
-        "flex flex-col flex-1 w-full h-full max-h-[100dvh] bg-workbench-background px-0 pt-0"
+        "flex flex-col flex-1 min-w-0 w-full h-full max-h-[100dvh] bg-workbench-background px-0 pt-0"
       )}
       style={{
         maxWidth: maxWidth,
@@ -21,7 +21,7 @@ export function WorkbenchPanel({
       <div className="window-draggable h-[10px] w-full"></div>
       <div
         className={cn(
-          "relative flex flex-col h-full max-h-[calc(100dvh-20px)] overflow-hidden border rounded-lg shadow-lg bg-background",
+          "relative flex flex-col h-full max-h-[calc(100dvh-20px)] min-w-0 overflow-hidden border rounded-lg shadow-lg bg-background",
           className
         )}
       >

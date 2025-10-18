@@ -7,6 +7,7 @@ import {
   WorkbenchContentArea,
   WorkbenchSidebarArea,
 } from "@workspace/ui/layouts/workbench";
+import { WorkbenchPanelGroup } from "@workspace/ui/layouts/workbench/components/Panel";
 import { DashActivityBar } from "@/containers/DashActivityBar";
 
 const fontSans = Geist({
@@ -37,7 +38,9 @@ export default function RootLayout({
               <DashActivityBar />
               {sidebar}
             </WorkbenchSidebarArea>
-            <WorkbenchContentArea>{children}</WorkbenchContentArea>
+            <WorkbenchContentArea>
+              <WorkbenchPanelGroup>{children}</WorkbenchPanelGroup>
+            </WorkbenchContentArea>
           </Workbench>
         </MainProvider>
       </body>
