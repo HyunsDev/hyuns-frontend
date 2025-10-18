@@ -16,12 +16,29 @@ body {
   }
 }
 
+/* Hide scrollbar background */
+::-webkit-scrollbar {
+  width: 8px; /* or 0 if you want it fully hidden */
+}
+
+/* Hide the scrollbar track (background) */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Optional: style scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color: var(--border);
+  border-radius: 9999px;
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --color-background: var(--background);
+  --color-workbench-background: var(--workbench-background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
@@ -57,6 +74,7 @@ body {
 :root {
   --radius: 0.65rem;
   --background: oklch(1 0 0);
+  --workbench-background: oklch(0.985 0 0);
   --foreground: oklch(0.141 0.005 285.823);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.141 0.005 285.823);
@@ -91,6 +109,7 @@ body {
 
 .dark {
   --background: oklch(0.141 0.005 285.823);
+  --workbench-background: oklch(0.21 0.006 285.885);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.21 0.006 285.885);
   --card-foreground: oklch(0.985 0 0);
