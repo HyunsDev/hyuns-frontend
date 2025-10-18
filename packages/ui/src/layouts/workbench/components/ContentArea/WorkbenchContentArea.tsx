@@ -1,6 +1,6 @@
 import { cn } from "@workspace/ui/lib/utils";
 
-export function WorkbenchContent({
+export function WorkbenchContentArea({
   className,
   ...props
 }: React.ComponentProps<"main">) {
