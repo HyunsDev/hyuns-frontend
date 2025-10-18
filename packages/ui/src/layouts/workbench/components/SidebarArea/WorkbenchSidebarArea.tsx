@@ -44,6 +44,7 @@ function WorkbenchSidebarResizeHandle() {
   const startWidthRef = useRef(0);
   const moveListenerRef = useRef<((event: PointerEvent) => void) | null>(null);
   const upListenerRef = useRef<((event: PointerEvent) => void) | null>(null);
+  const sidebarElementRef = useRef<HTMLElement | null>(null);
   const [isDragging, setIsDragging] = useState(false);
 
   const isCollapsed = state === "collapsed";
@@ -61,6 +62,11 @@ function WorkbenchSidebarResizeHandle() {
     if (upListenerRef.current) {
       document.removeEventListener("pointerup", upListenerRef.current);
       upListenerRef.current = null;
+    }
+
+    if (sidebarElementRef.current) {
+      sidebarElementRef.current.removeAttribute("data-resizing");
+      sidebarElementRef.current = null;
     }
 
     document.body.style.removeProperty("cursor");
@@ -103,6 +109,14 @@ function WorkbenchSidebarResizeHandle() {
 
       handleRef.current = event.currentTarget;
       event.currentTarget.setPointerCapture(event.pointerId);
+
+      const sidebarElement = event.currentTarget.closest<HTMLElement>(
+        "[data-slot='sidebar']"
+      );
+      if (sidebarElement) {
+        sidebarElement.setAttribute("data-resizing", "true");
+        sidebarElementRef.current = sidebarElement;
+      }
 
       document.body.style.cursor = "col-resize";
       document.body.style.userSelect = "none";
