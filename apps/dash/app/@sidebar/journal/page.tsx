@@ -1,8 +1,5 @@
-import { Calendar } from "@workspace/ui/components/calendar";
 import { Separator } from "@workspace/ui/components/separator";
 import {
-  SidebarHeader,
-  SidebarTrigger,
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
@@ -15,6 +12,8 @@ import {
   WorkbenchSidebarHeader,
 } from "@workspace/ui/layouts/workbench";
 import { Inbox } from "lucide-react";
+import { JournalCalendar } from "./containers/JournalCalendar";
+import dynamic from "next/dynamic";
 
 export default function Page() {
   return (
@@ -22,11 +21,7 @@ export default function Page() {
       <WorkbenchSidebarHeader title="Dashboard" />
       <SidebarContent>
         <div className="">
-          <Calendar
-            mode="single"
-            className="rounded-md w-full bg-workbench-background"
-            captionLayout="dropdown"
-          />
+          <JournalCalendar />
           <Separator />
         </div>
         <SidebarGroup>

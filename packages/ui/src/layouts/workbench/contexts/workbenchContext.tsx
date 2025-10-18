@@ -10,8 +10,8 @@ import React, {
 } from "react";
 
 const SIDEBAR_WIDTH_STORAGE_KEY = "workbench_sidebar_width";
-const SIDEBAR_DEFAULT_WIDTH = 280;
-const SIDEBAR_MIN_WIDTH = 220;
+const SIDEBAR_DEFAULT_WIDTH = 300;
+const SIDEBAR_MIN_WIDTH = 300;
 const SIDEBAR_MAX_WIDTH = 480;
 
 const clampWidth = (width: number) =>
@@ -75,16 +75,17 @@ export function WorkbenchContextProvider({
     }
   }, [sidebarWidth]);
 
-  const setSidebarWidth = useCallback<
-    WorkbenchContextType["setSidebarWidth"]
-  >((value) => {
-    setSidebarWidthState((previous) => {
-      const nextWidth = clampWidth(
-        typeof value === "function" ? value(previous) : value
-      );
-      return nextWidth;
-    });
-  }, []);
+  const setSidebarWidth = useCallback<WorkbenchContextType["setSidebarWidth"]>(
+    (value) => {
+      setSidebarWidthState((previous) => {
+        const nextWidth = clampWidth(
+          typeof value === "function" ? value(previous) : value
+        );
+        return nextWidth;
+      });
+    },
+    []
+  );
 
   const resetSidebarWidth = useCallback(() => {
     setSidebarWidthState(SIDEBAR_DEFAULT_WIDTH);
