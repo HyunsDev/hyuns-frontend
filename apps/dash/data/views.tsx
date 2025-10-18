@@ -1,4 +1,13 @@
-import { LayoutDashboard, NotepadText, ScrollText } from "lucide-react";
+import {
+  CircleCheck,
+  Flag,
+  Inbox,
+  Layers3,
+  LayoutDashboard,
+  ScrollText,
+  Shapes,
+  StickyNote,
+} from "lucide-react";
 import { ReactNode } from "react";
 
 export type View = {
@@ -15,6 +24,13 @@ export type View = {
 };
 
 export const views: View[] = [
+  {
+    id: "inbox",
+    title: "Inbox",
+    href: "/inbox",
+    icon: <Inbox />,
+    isVisibleInViewList: true,
+  },
   {
     id: "dashboard",
     title: "Dashboard",
@@ -33,7 +49,35 @@ export const views: View[] = [
     id: "memo",
     title: "Memo",
     href: "/memo",
-    icon: <NotepadText />,
+    icon: <StickyNote />,
+    isVisibleInViewList: true,
+  },
+  {
+    id: "todo",
+    title: "Todo",
+    href: "/todo",
+    icon: <CircleCheck />,
+    isVisibleInViewList: true,
+  },
+  {
+    id: "project",
+    title: "Project",
+    href: "/project",
+    icon: <Flag />,
+    isVisibleInViewList: true,
+  },
+  {
+    id: "area",
+    title: "Area",
+    href: "/area",
+    icon: <Shapes />,
+    isVisibleInViewList: true,
+  },
+  {
+    id: "creation",
+    title: "Creation",
+    href: "/creation",
+    icon: <Layers3 />,
     isVisibleInViewList: true,
   },
 ];

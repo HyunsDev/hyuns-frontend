@@ -1,6 +1,4 @@
 import {
-  SidebarHeader,
-  SidebarTrigger,
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
@@ -12,7 +10,7 @@ import {
   WorkbenchSidebar,
   WorkbenchSidebarHeader,
 } from "@workspace/ui/layouts/workbench";
-import { Inbox, LayoutDashboard } from "lucide-react";
+import { Inbox } from "lucide-react";
 
 export default function Page() {
   return (

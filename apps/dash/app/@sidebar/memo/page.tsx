@@ -8,15 +8,16 @@ import {
   SidebarMenuItem,
   SidebarMenuButton,
 } from "@workspace/ui/components/sidebar";
-import { WorkbenchSidebar } from "@workspace/ui/layouts/workbench";
+import {
+  WorkbenchSidebar,
+  WorkbenchSidebarHeader,
+} from "@workspace/ui/layouts/workbench";
 import { Inbox } from "lucide-react";
 
 export default function Page() {
   return (
     <WorkbenchSidebar>
-      <SidebarHeader>
-        <SidebarTrigger />
-      </SidebarHeader>
+      <WorkbenchSidebarHeader title="Dashboard" />
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupContent>

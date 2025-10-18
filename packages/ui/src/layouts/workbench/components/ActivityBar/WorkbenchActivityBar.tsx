@@ -139,8 +139,8 @@ export function WorkbenchActivityBarMenuItem({
             isActive
               ? "top-0.5 bottom-0.5 opacity-100"
               : hasNotification
-                ? "top-1/2 h-2 -translate-y-1/2 opacity-50 group-hover/menu-button:h-5 group-hover/menu-button:opacity-50"
-                : "top-1/2 h-2 -translate-y-1/2 opacity-0 group-hover/menu-button:h-5 group-hover/menu-button:opacity-50"
+                ? "top-1/2 h-2 -translate-y-1/2 opacity-100 group-hover/menu-button:h-5 group-hover/menu-button:opacity-100"
+                : "top-1/2 h-2 -translate-y-1/2 opacity-0 group-hover/menu-button:h-5 group-hover/menu-button:opacity-100"
           )}
         />
         {icon}

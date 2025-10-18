@@ -51,7 +51,7 @@ export function DashActivityBar() {
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupContent className="px-0">
-            <SidebarMenu className="gap-1.5">
+            <SidebarMenu className="gap-2">
               {views
                 .filter((view) => view.isVisibleInViewList)
                 .map((view) => (
