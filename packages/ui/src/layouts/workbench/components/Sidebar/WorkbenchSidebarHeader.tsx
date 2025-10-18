@@ -1,3 +1,6 @@
+"use client";
+
+import { Kbd } from "@workspace/ui/components/kbd";
 import {
   SidebarHeader,
   SidebarTrigger,
@@ -17,7 +20,9 @@ export function WorkbenchSidebarHeader({ title }: { title: string }) {
           <TooltipTrigger asChild>
             <SidebarTrigger />
           </TooltipTrigger>
-          <TooltipContent>사이드바 접기</TooltipContent>
+          <TooltipContent>
+            사이드바 접기 <Kbd>Ctrl + /</Kbd>
+          </TooltipContent>
         </Tooltip>
       </div>
     </SidebarHeader>

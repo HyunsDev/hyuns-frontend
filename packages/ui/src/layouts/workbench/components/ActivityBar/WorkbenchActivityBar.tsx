@@ -30,7 +30,7 @@ export function WorkbenchActivityBar({
 }
 
 const sidebarMenuButtonVariants = cva(
-  "peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md [&>svg]:transition-[opacity] [&>svg]:opacity-30 text-left text-sm outline-hidden ring-sidebar-ring transition-[width,height,padding,opacity] hover:text-sidebar-accent-foreground focus-visible:ring-2 disabled:pointer-events-none disabled:[&>svg]:opacity-20 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:[&>svg]:opacity-50 data-[active=true]:[&>svg]:opacity-100 data-[active=true]:font-medium data-[active=true]:text-sidebar-primary data-[state=open]:hover:[&>svg]:opacity-70 data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8!  [&>span:last-child]:truncate [&>svg]:size-6 [&>svg]:shrink-0 [&>svg]:stroke-[1.5px]",
+  "peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md [&>svg]:opacity-30 text-left text-sm outline-hidden ring-sidebar-ring transition-[width,height,padding,opacity] hover:text-sidebar-accent-foreground focus-visible:ring-2 disabled:pointer-events-none disabled:[&>svg]:opacity-20 group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:[&>svg]:opacity-50 data-[active=true]:[&>svg]:opacity-100 data-[active=true]:font-medium data-[active=true]:text-sidebar-primary data-[state=open]:hover:[&>svg]:opacity-70 data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8!  [&>span:last-child]:truncate [&>svg]:size-6 [&>svg]:shrink-0 [&>svg]:stroke-[1.5px]",
   {
     variants: {
       variant: {
