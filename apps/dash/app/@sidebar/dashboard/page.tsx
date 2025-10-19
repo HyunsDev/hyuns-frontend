@@ -1,6 +1,16 @@
 "use client";
 
+import { DashIcon } from "@/components/DashIcon";
+import { Button } from "@workspace/ui/components/button";
 import { Dialog, DialogTrigger } from "@workspace/ui/components/dialog";
+import {
+  Item,
+  ItemActions,
+  ItemContent,
+  ItemDescription,
+  ItemTitle,
+} from "@workspace/ui/components/item";
+import { Separator } from "@workspace/ui/components/separator";
 import {
   SidebarContent,
   SidebarGroup,
@@ -13,8 +23,10 @@ import {
   Window,
   WindowContent,
   WindowPage,
+  WindowPageHeader,
   WindowSidebar,
   WindowSidebarContent,
+  WindowSidebarFooter,
   WindowSidebarGroup,
   WindowSidebarGroupContent,
   WindowSidebarHeader,
@@ -26,7 +38,14 @@ import {
   WorkbenchSidebar,
   WorkbenchSidebarHeader,
 } from "@workspace/ui/layouts/workbench";
-import { Cog, Command, Inbox, Monitor, UserIcon } from "lucide-react";
+import {
+  Cog,
+  Command,
+  GalleryVerticalEnd,
+  Inbox,
+  Monitor,
+  UserIcon,
+} from "lucide-react";
 
 function ExampleWindow() {
   return (
@@ -65,14 +84,81 @@ function ExampleWindow() {
                     <span>디스플레이</span>
                   </WindowSidebarMenuButton>
                 </WindowSidebarMenuItem>
+                <WindowSidebarMenuItem>
+                  <WindowSidebarMenuButton to="overflow">
+                    <GalleryVerticalEnd />
+                    <span>Overflow</span>
+                  </WindowSidebarMenuButton>
+                </WindowSidebarMenuItem>
               </WindowSidebarMenu>
             </WindowSidebarGroupContent>
           </WindowSidebarGroup>
         </WindowSidebarContent>
+        <WindowSidebarFooter>
+          <div className="px-1 flex-1 text-left leading-tight">
+            <span className="truncate font-medium text-xs text-foreground-inactive">
+              Hyuns Dash v0.0.0
+            </span>
+          </div>
+        </WindowSidebarFooter>
       </WindowSidebar>
       <WindowContent>
-        <WindowPage pageId="home">home</WindowPage>
-        <WindowPage pageId="display">Display</WindowPage>
+        <WindowPage pageId="home">
+          <WindowPageHeader>Title 제목</WindowPageHeader>
+          <Item>
+            <ItemContent>
+              <ItemTitle>Default Variant</ItemTitle>
+              <ItemDescription>
+                Standard styling with subtle background and borders.
+              </ItemDescription>
+            </ItemContent>
+            <ItemActions>
+              <Button variant="outline" size="sm">
+                Open
+              </Button>
+            </ItemActions>
+          </Item>
+          <Item>
+            <ItemContent>
+              <ItemTitle>Default Variant</ItemTitle>
+              <ItemDescription>
+                Standard styling with subtle background and borders.
+              </ItemDescription>
+            </ItemContent>
+            <ItemActions>
+              <Button variant="outline" size="sm">
+                Open
+              </Button>
+            </ItemActions>
+          </Item>
+          <Item>
+            <ItemContent>
+              <ItemTitle>Default Variant</ItemTitle>
+              <ItemDescription>
+                Standard styling with subtle background and borders.
+              </ItemDescription>
+            </ItemContent>
+            <ItemActions>
+              <Button variant="outline" size="sm">
+                Open
+              </Button>
+            </ItemActions>
+          </Item>
+        </WindowPage>
+        <WindowPage pageId="display">
+          <WindowPageHeader>Display</WindowPageHeader>
+        </WindowPage>
+        <WindowPage pageId="overflow">
+          <WindowPageHeader>Overflow</WindowPageHeader>
+          <div className="flex flex-1 flex-col gap-4 p-4">
+            {Array.from({ length: 24 }).map((_, index) => (
+              <div
+                key={index}
+                className="bg-muted/50 aspect-video h-12 w-full rounded-lg"
+              />
+            ))}
+          </div>
+        </WindowPage>
       </WindowContent>
     </Window>
   );

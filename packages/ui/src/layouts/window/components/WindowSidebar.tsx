@@ -140,7 +140,7 @@ function WindowSidebarProvider({
             } as React.CSSProperties
           }
           className={cn(
-            "group/sidebar-wrapper has-data-[variant=inset]:bg-sidebar flex min-h-svh w-full",
+            "group/sidebar-wrapper has-data-[variant=inset]:bg-sidebar flex h-full w-full",
             className
           )}
           {...props}
@@ -171,7 +171,7 @@ function WindowSidebar({
       <div
         data-slot="sidebar"
         className={cn(
-          "bg-sidebar text-sidebar-foreground flex h-full w-(--sidebar-width) flex-col min-w-[250px] max-w-[250px] gap-1 overflow-hidden rounded-lg",
+          "bg-sidebar text-sidebar-foreground flex h-full w-(--sidebar-width) flex-col min-w-[250px] max-w-[250px]=overflow-hidden rounded-lg",
           className
         )}
         {...props}
@@ -406,7 +406,7 @@ function WindowSidebarGroup({
     <div
       data-slot="sidebar-group"
       data-sidebar="group"
-      className={cn("relative flex w-full min-w-0 flex-col p-2", className)}
+      className={cn("relative flex w-full min-w-0 flex-col p-1", className)}
       {...props}
     />
   );
@@ -478,7 +478,7 @@ function WindowSidebarMenu({
     <ul
       data-slot="sidebar-menu"
       data-sidebar="menu"
-      className={cn("flex w-full min-w-0 flex-col gap-1", className)}
+      className={cn("flex w-full min-w-0 flex-col gap-0.5", className)}
       {...props}
     />
   );

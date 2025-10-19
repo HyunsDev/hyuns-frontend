@@ -12,12 +12,12 @@ export type WindowProps = {
 export function Window({ children, defaultPageId, srTitle }: WindowProps) {
   return (
     <WindowContextProvider defaultPageId={defaultPageId}>
-      <WindowSidebarProvider>
-        <DialogContent className="max-w-[min(90dvw,1100px)] w-full max-h-[min(90dvh,720px)] h-full flex p-0 gap-0">
+      <DialogContent className="max-w-[min(90dvw,1100px)] w-full max-h-[min(90dvh,720px)] h-full flex p-0 gap-0">
+        <WindowSidebarProvider>
           <DialogTitle className="sr-only">{srTitle}</DialogTitle>
           {children}
-        </DialogContent>
-      </WindowSidebarProvider>
+        </WindowSidebarProvider>
+      </DialogContent>
     </WindowContextProvider>
   );
 }

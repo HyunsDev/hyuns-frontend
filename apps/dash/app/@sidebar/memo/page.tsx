@@ -12,7 +12,7 @@ import {
   WorkbenchSidebar,
   WorkbenchSidebarHeader,
 } from "@workspace/ui/layouts/workbench";
-import { Inbox } from "lucide-react";
+import { Archive, Inbox, StickyNote } from "lucide-react";
 
 export default function Page() {
   return (
@@ -23,16 +23,16 @@ export default function Page() {
           <SidebarGroupContent>
             <SidebarMenu>
               <SidebarMenuItem>
-                <SidebarMenuButton
-                  tooltip={{
-                    children: `Inbox`,
-                    hidden: false,
-                  }}
-                  isActive={true}
-                  className="px-2.5 md:px-2"
-                >
-                  <Inbox />
+                <SidebarMenuButton isActive={true} className="px-2.5 md:px-2">
+                  <StickyNote />
                   <span>Memo</span>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+
+              <SidebarMenuItem>
+                <SidebarMenuButton className="px-2.5 md:px-2">
+                  <Archive />
+                  <span>Archived</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
             </SidebarMenu>
