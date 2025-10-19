@@ -13,13 +13,14 @@ import {
 } from "@workspace/ui/layouts/workbench";
 import { Inbox } from "lucide-react";
 import { JournalCalendar } from "./containers/JournalCalendar";
-import dynamic from "next/dynamic";
+import { toast } from "sonner";
+import { JournalToastButton } from "./containers/JournalToastButton";
 
 export default function Page() {
   return (
     <WorkbenchSidebar>
       <WorkbenchSidebarHeader title="Dashboard" />
-      <SidebarContent>
+      <SidebarContent className="gap-0">
         <div className="">
           <JournalCalendar />
           <Separator />
@@ -40,6 +41,7 @@ export default function Page() {
                   <span>Journal</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
+              <JournalToastButton />
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
