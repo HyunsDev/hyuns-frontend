@@ -1,4 +1,5 @@
 import { GalleryVerticalEnd } from "lucide-react";
+import { LoginForm } from "./LoginForm";
 
 export default function Page() {
   return (
@@ -8,9 +9,10 @@ export default function Page() {
           <div className="bg-primary text-primary-foreground flex size-6 items-center justify-center rounded-md">
             <GalleryVerticalEnd className="size-4" />
           </div>
-          Acme Inc.
+          HyunsDev Account
         </a>
       </div>
+      <LoginForm />
     </div>
   );
 }
