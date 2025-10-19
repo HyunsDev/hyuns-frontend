@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 
 import "@workspace/ui/globals.css";
-import { MainProvider } from "@/containers/MainProvider/MainProvider";
+import { MainProvider } from "@/containers/Provider/MainProvider";
 import {
   Workbench,
   WorkbenchContentArea,
