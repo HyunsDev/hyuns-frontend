@@ -26,6 +26,16 @@ export const COLOR_PRESETS: ColorPreset[] = [
     backgroundColor: "#F5F7FA",
   },
   {
+    name: "Black Primary",
+    iconColor: "#FFFFFF",
+    backgroundColor: "#191A1C",
+  },
+  {
+    name: "Black Secondary",
+    iconColor: "#191A1C",
+    backgroundColor: "#ffffff",
+  },
+  {
     name: "Blue Primary",
     iconColor: "#FFFFFF",
     backgroundColor: "#2463E9",
